@@ -2,7 +2,7 @@
   /* psuedo class => special state of element */
   &:link,
   &:visited {
-    font-size: 1.6rem;
+    font-size: $default-font-size;
     text-decoration: none;
     text-transform: uppercase;
     padding: 1.5rem 4rem;
@@ -52,5 +52,27 @@
     animation: moveInFromBottom 1s ease-in 0.75s;
     /* apply the styles of animation at 0% before animation starts*/
     animation-fill-mode: backwards;
+  }
+}
+.btn-text {
+  &:link,
+  &:visited {
+    color: $color-primary;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid $color-primary;
+    padding: 0.3rem;
+    font-size: $default-font-size;
+    transition: all 0.3s;
+  }
+  &:hover {
+    background: $color-primary;
+    color: $color-white;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+    transform: translateY(-2px);
+  }
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 0.8rem 1rem rgba($color-black, 0.2);
   }
 }
