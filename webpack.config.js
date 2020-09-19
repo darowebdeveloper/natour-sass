@@ -45,6 +45,15 @@ module.exports = {
           'style-loader',
           'css-loader?url=false',
           {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+              postcssOptions: {
+                plugins: [require('autoprefixer')],
+              },
+            },
+          },
+          {
             loader: 'sass-loader',
             options: {
               sourceMap: true,
