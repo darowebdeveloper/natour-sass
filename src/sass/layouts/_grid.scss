@@ -1,0 +1,51 @@
+/*-------------------------------------------*\
+  Define the width of the row
+  The standard width for a row is 1140px;
+\*-------------------------------------------*/
+.row {
+  /* If the viewport is less than 114rem then the width is 100% */
+  max-width: $grid-width;
+  background: #aee;
+  // center another block inside another block
+  margin: 0 auto;
+  // Psuedo selector :not
+  // Every row except the last row
+  &:not(:last-child) {
+    margin-bottom: $gutter-vertical;
+  }
+
+  @include clearfix;
+
+  [class^="col-"] {
+    background: #eae;
+    float: left;
+    &:not(:last-child) {
+      margin-right: $gutter-horizontal;
+    }
+  }
+
+  .col-1-of-2 {
+    // calc() is a css function
+    width: calc((100% - #{$gutter-horizontal}) / 2);
+  }
+
+  .col-1-of-3 {
+    width: calc((100% - (#{$gutter-horizontal}) * 2) / 3);
+  }
+
+  .col-2-of-3 {
+    width: calc(((100% - (#{$gutter-horizontal}) * 2) / 3)*2 + #{$gutter-horizontal});
+  }
+
+  .col-1-of-4 {
+    width: calc((100% - (#{$gutter-horizontal}) * 3) / 4);
+  }
+
+  .col-2-of-4 {
+    width: calc(((100% - (#{$gutter-horizontal}) * 3) / 4) * 2 + (#{$gutter-horizontal}));
+  }
+  
+  .col-3-of-4 {
+    width: calc((100% - (#{$gutter-horizontal}) * 3) / 4 * 3 + (2*#{$gutter-horizontal}));
+  }
+}
