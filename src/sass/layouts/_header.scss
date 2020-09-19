@@ -9,7 +9,7 @@
       rgba($color-primary-light, 0.8),
       rgba($color-primary-dark, 0.8)
     ),
-    url(../img/hero.jpg) no-repeat top;
+    url(./img/hero.jpg) no-repeat top;
   /* To cover the container */
   background-size: cover;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
