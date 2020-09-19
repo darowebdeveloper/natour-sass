@@ -1,0 +1,35 @@
+body {
+  /* set font properties for inheritance since body is the parent of all html elements */
+  font-family: Futura, Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: normal;
+  line-height: 1.7;
+  color: $color-grey-dark;
+  padding: 3rem;
+}
+
+.heading-primary {
+  color: $color-white;
+  text-transform: uppercase;
+  margin-bottom: 6rem;
+  /* 
+    Fix shaking of child elements that are animated 
+    But it also hide the back face if element rotated
+  */
+  backface-visibility: hidden;
+
+  &--main {
+    display: block;
+    font-size: 6rem;
+    letter-spacing: 3.5rem;
+    animation-name: moveInFromLeft;
+    animation-duration: 1s;
+  }
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: lighter;
+    letter-spacing: 1.92rem;
+    animation-name: moveInFromRight;
+    animation-duration: 1s;
+  }
+}

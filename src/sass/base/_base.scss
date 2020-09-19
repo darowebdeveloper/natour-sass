@@ -1,0 +1,30 @@
+/*-------------------------------------------*\
+  Reset CSS
+\*-------------------------------------------*/
+*,
+*::after,
+a::before {
+  margin: 0;
+  padding: 0;
+  /* element will inherit box-sizing from body element */
+  box-sizing: inherit;
+}
+html {
+  /* 
+    Set the root font-size to 10px for easy calutation 
+    default is 16px; we want 10px
+    So, we 10 / 16 = 0.625 * 100 = 62.5%
+    This defines what rem is
+  */
+  font-size: 62.5%;
+}
+body {
+  /* Below is not inherited; * above is inherited */
+  /* 
+    Padding and border not added to content width
+    Best practice for box-sizing using inherit
+    this will help other plugins to set diff
+    box-sizing
+  */
+  box-sizing: border-box;
+}
