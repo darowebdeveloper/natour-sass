@@ -24,7 +24,21 @@ module.exports = {
         exclude: /\.module.(s(a|c)ss)$/,
         loader: [
           'style-loader',
-          'css-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              url: (url, resourcePath) => {
+                // resourcePath - path to css file
+
+                // Don't handle `img.png` urls
+                if (/\.(jpg|jpeg|png|gif|mp3|mp4|webm)$/gi.test(url)) {
+                  return false;
+                }
+
+                return true;
+              },
+            },
+          },
           {
             loader: 'postcss-loader',
             options: {
@@ -53,16 +67,6 @@ module.exports = {
             },
           },
         ],
-      },
-      {
-        test: /\.(jpg|jpeg|png|gif|mp3|mp4|webm)$/gi,
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: '[name].[hash].[ext]',
-            outputPath: 'assets/images',
-          },
-        },
       },
     ],
   },
