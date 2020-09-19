@@ -9,6 +9,7 @@
 
 @import 'components/button';
 
+@import 'layouts/grid';
 @import 'layouts/header';
 
 @import 'pages/home';
@@ -48,4 +49,12 @@
     - themes/ 
     - abstracts/ (no outputs)
     - vendors/ 
+\*-------------------------------------------*/
+
+/*-------------------------------------------*\
+  This project is using Float Layouts for
+  Responsive Design
+  - We create a simple grid system having Four Columns
+  but the principles for 12 or 6 columns are the same
+  - Columns are in a row
 \*-------------------------------------------*/

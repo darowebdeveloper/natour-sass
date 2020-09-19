@@ -33,3 +33,20 @@ body {
     animation-duration: 1s;
   }
 }
+.heading-secondary {
+  font-size: 3.2rem;
+  text-transform: uppercase;
+  font-weight: bolder;
+  // To add gradient color to a font:
+  //  1. Add gradient to background
+  background: linear-gradient(
+    to right,
+    $color-primary-light,
+    $color-primary-dark
+  );
+  // 2. Make the gradient stop at the text
+  display: inline-block;
+  // 3. Use background-clip property to add gradient to the font color tranparent
+  -webkit-background-clip: text;
+  color: transparent;
+}
