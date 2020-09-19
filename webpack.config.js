@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   entry: path.resolve(__dirname, 'src/js/index.js'),
   output: {
-    path: path.resolve(__dirname, 'src'),
+    path: path.resolve(__dirname, 'dist'),
     filename: 'bundled.js',
   },
   devServer: {
@@ -20,30 +20,11 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.module\.s(a|c)ss$/,
-        loader: [
-          'style-loader',
-          {
-            loader: 'css-loader?url=false',
-            options: {
-              modules: true,
-              sourceMap: true,
-            },
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: true,
-            },
-          },
-        ],
-      },
-      {
-        test: /\.s(a|c)ss$/,
+        test: /\.(sass|scss|css)$/,
         exclude: /\.module.(s(a|c)ss)$/,
         loader: [
           'style-loader',
-          'css-loader?url=false',
+          'css-loader',
           {
             loader: 'postcss-loader',
             options: {
@@ -60,6 +41,28 @@ module.exports = {
             },
           },
         ],
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'assets/webfonts',
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(jpg|jpeg|png|gif|mp3|mp4|webm)$/gi,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[hash].[ext]',
+            outputPath: 'assets/images',
+          },
+        },
       },
     ],
   },
