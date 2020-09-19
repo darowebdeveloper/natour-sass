@@ -5,3 +5,22 @@
   // 95-75 = 20vh
   margin-top: -20vh;
 }
+.section-feature {
+  padding: 20rem 0;
+  background: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../img/nat-4.jpg) no-repeat top;
+  /* To cover the container */
+  background-size: cover;
+
+  // To skew and to undo skew for direct child elements
+  margin-top: -10rem;
+  transform: skewY(-7deg);
+  & > * {
+    transform: skewY(7deg);
+  }
+  // end of skew
+}
