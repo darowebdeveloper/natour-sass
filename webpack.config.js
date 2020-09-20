@@ -19,7 +19,7 @@ class RunAfterCompile {
     compiler.hooks.done.tap('Copy images', () => {
       // To host on github we need to name the folder to docs not dist
       // fse.copySync('./app/assets/images', './dist/assets/images');
-      fse.copySync('./src/img', './docs/img');
+      fse.copySync('./src/images', './docs/images');
     });
   }
 }
