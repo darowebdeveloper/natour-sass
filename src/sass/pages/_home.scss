@@ -31,6 +31,34 @@
   margin-top: -9.5rem;
 }
 .section-stories {
-  padding: 25rem;
+  padding: 15rem;
   position: relative;
+}
+.section-booking {
+  padding: 15rem 0;
+  background: linear-gradient(
+    to right bottom,
+    $color-primary-light,
+    $color-primary-dark
+  );
+}
+.booking {
+  background-size: cover;
+
+  border-radius: 0.3rem;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
+  // Two solid colors gradient
+  // 1. Use linear gradient
+  background: linear-gradient(
+      105deg,
+      rgba($color-white, 0.9) 0%,
+      rgba($color-white, 0.9) 50%,
+      transparent 50%
+    ),
+    url('../images/nat-10.jpg');
+  height: 50rem;
+  &__form {
+    width: 50%;
+    padding: 6rem;
+  }
 }

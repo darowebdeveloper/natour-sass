@@ -1,5 +1,6 @@
 .btn {
   /* psuedo class => special state of element */
+  &,
   &:link,
   &:visited {
     font-size: $default-font-size;
@@ -11,8 +12,12 @@
     transition: all 0.2s;
     /* position for reference */
     position: relative;
+    // Styles for button element
+    border: none;
+    cursor: pointer;
   }
   /* psuedo class */
+
   &:hover {
     transform: translateY(-3px);
     /* box-shadow: x y blue color */
@@ -22,10 +27,13 @@
       opacity: 0;
     }
   }
+  &:focus,
   &:active {
     transform: translateY(-1px);
     /* box-shadow: x y blue color */
     box-shadow: 0 0.5rem 1rem rgba($color-black, 0.5);
+    // styles for button element
+    outline: none;
   }
   &--white {
     background: $color-white;

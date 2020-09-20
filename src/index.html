@@ -229,6 +229,52 @@
         </div>
       </section>
       <!-- End of Story section -->
+      <!-- Booking section -->
+      <section class="section-booking">
+        <div class="row">
+          <div class="booking">
+            <div class="booking__form">
+              <form class="form">
+                <ul class="u-mb-small">
+                  <h2 class="heading-secondary heading-secondary--smaller">Start booking now</h2>
+                </ul>
+                <div class="form__group">
+                  <input type="text" class="form__input" id="name" autocomplete="off" placeholder="Full Name" required />
+                  <label for="name" class="form__label">Full name</label>
+                  <span class="form__invalid"></span>
+                </div>
+                <div class="form__group">
+                  <input type="email" class="form__input" autocomplete="off" id="email" placeholder="Email address" required />
+                  <label for="email" class="form__label">Email address</label>
+                  <span class="form__invalid"></span>
+                </div>
+                <div class="form__group">
+                  <div class="form__radio-group">
+                    <input type="radio" class="form__radio-input" id="small" name="tour" required />
+                    <label class="form__radio-label" for="small">
+                      <span class="form__radio-button"></span>
+                      Small tour
+                    </label>
+                    <span class="form__invalid"></span>
+                  </div>
+                  <div class="form__radio-group">
+                    <input type="radio" class="form__radio-input" id="large" name="tour" required checked />
+                    <label class="form__radio-label" for="large">
+                      <span class="form__radio-button"></span>
+                      Large tour
+                    </label>
+                    <span class="form__invalid"></span>
+                  </div>
+                </div>
+                <div class="form__group u-mt-medium">
+                  <button class="btn btn--primary">Next step &rarr;</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End of Booking section -->
     </main>
     <!-- End of Main Content -->
     <!-- HTML for Testing the Grid System -->
