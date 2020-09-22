@@ -1,0 +1,80 @@
+.popup {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba($color-black, 0.8);
+  z-index: 130;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: all 0.3s;
+
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__content {
+    width: 75%;
+    margin: 0 auto;
+    background: $color-white;
+    box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
+    border-radius: 3px;
+    @include centerXY;
+    overflow: hidden;
+    transform: translate(-50%, -50%) scale(0.5); // translate(-50%,-50%) because of @include centerXY
+    opacity: 0;
+    transition: all 0.3s 0.2s;
+    display: table;
+  }
+  &:target &__content {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  &__image {
+    display: block;
+    width: 100%;
+  }
+  &__left {
+    width: 33.33333%;
+    display: table-cell;
+  }
+  &__right {
+    width: 66.66667;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 3rem 5rem;
+  }
+  &__close {
+    &:link,
+    &:visited {
+      text-decoration: none;
+      color: $color-grey-dark;
+      position: absolute;
+      top: 2.5rem;
+      right: 2.5rem;
+      font-size: 3rem;
+      line-height: 1;
+      display: inline-block;
+      transition: all 0.3s;
+    }
+    &:hover {
+      color: $color-primary;
+    }
+  }
+  &__text {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+    text-align: justify;
+
+    // Make a column layout
+    // 1. column-count
+    column-count: 2;
+    column-gap: 4rem;
+    // end of column layout
+    hyphens: auto; // need add lang attribute <html lang="en">
+  }
+}
