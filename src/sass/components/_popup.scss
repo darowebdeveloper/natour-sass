@@ -37,13 +37,6 @@
     display: block;
     width: 100%;
     @include respond(tab-land) {
-      width: 40%;
-
-      display: inline-block;
-      margin-top: 1rem;
-      margin-right: 1rem;
-    }
-    @include respond(phone) {
       display: none;
     }
   }
