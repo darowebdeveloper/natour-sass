@@ -16,6 +16,14 @@
     &:hover {
       cursor: pointer;
     }
+    @include respond(tab-port) {
+      top: 4rem;
+      right: 4rem;
+    }
+    @include respond(phone) {
+      top: 3rem;
+      right: 3rem;
+    }
   }
 
   &__checkbox:checked ~ &__background {
@@ -36,6 +44,15 @@
     background: radial-gradient($color-primary-light, $color-primary-dark);
 
     transition: all 0.8s;
+
+    @include respond(tab-port) {
+      top: 4.5rem;
+      right: 4.5rem;
+    }
+    @include respond(phone) {
+      top: 3.5rem;
+      right: 3.5rem;
+    }
   }
   &__nav {
     opacity: 0;

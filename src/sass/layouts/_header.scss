@@ -13,6 +13,9 @@
   /* To cover the container */
   background-size: cover;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  @include respond(phone) {
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  }
   /* position relative for child reference */
   position: relative;
   &__logo-box {
