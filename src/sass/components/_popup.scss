@@ -6,7 +6,6 @@
   left: 0;
   background: rgba($color-black, 0.8);
   z-index: 130;
-
   opacity: 0;
   visibility: hidden;
 
@@ -37,16 +36,35 @@
   &__image {
     display: block;
     width: 100%;
+    @include respond(tab-land) {
+      width: 40%;
+
+      display: inline-block;
+      margin-top: 1rem;
+      margin-right: 1rem;
+    }
+    @include respond(phone) {
+      display: none;
+    }
   }
   &__left {
     width: 33.33333%;
     display: table-cell;
+    @include respond(tab-land) {
+      width: 100%;
+      display: block;
+      text-align: center;
+    }
   }
   &__right {
     width: 66.66667;
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem;
+    @include respond(tab-land) {
+      width: 100%;
+      display: block;
+    }
   }
   &__close {
     &:link,
@@ -75,6 +93,9 @@
     column-count: 2;
     column-gap: 4rem;
     // end of column layout
+    @include respond(phone) {
+      column-count: 1;
+    }
     hyphens: auto; // need add lang attribute <html lang="en">
   }
 }
